@@ -1,0 +1,11 @@
+.slick-prev:before, .slick-next:before{
+    color: red;
+}
+.slick-slide div{
+    margin: 0 0.3rem;
+}
+.slick-dots li button:before{
+    margin-top: 30px;
+    color: goldenrod;
+ 
+}

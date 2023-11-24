@@ -1,0 +1,123 @@
+[
+    {
+      "course_name": "Web Development Bootcamp",
+      "price": 49.99,
+      "rating": 4.8,
+      "image": "https://i.ibb.co/S7wxLwc/Rectangle-2-1.png",
+      "total_enrolment": 1200,
+      "enrol": 400,
+      "short_desc": "Comprehensive bootcamp covering HTML, CSS, and JavaScript.",
+      "mentor_name": "John Doe"
+    },
+    {
+      "course_name": "Graphic Design Fundamentals",
+      "price": 29.99,
+      "rating": 4.5,
+      "image": "https://i.ibb.co/52cR12M/Rectangle-2-6.png",
+      "total_enrolment": 800,
+      "enrol": 300,
+      "short_desc": "Master the basics of graphic design with hands-on projects.",
+      "mentor_name": "Jane Smith"
+    },
+    {
+      "course_name": "Data Science with Python",
+      "price": 59.99,
+      "rating": 4.7,
+      "image": "https://i.ibb.co/qp8LGxC/Rectangle-3.png",
+      "total_enrolment": 1500,
+      "enrol": 600,
+      "short_desc": "Learn data science using Python programming language.",
+      "mentor_name": "Alex Johnson"
+    },
+    {
+      "course_name": "Digital Marketing Mastery",
+      "price": 39.99,
+      "rating": 4.6,
+      "image": "https://i.ibb.co/tHQ3g7D/Digital-Marketing-Mastery.jpg",
+      "total_enrolment": 1000,
+      "enrol": 350,
+      "short_desc": "Become an expert in digital marketing strategies and tools.",
+      "mentor_name": "Emily Davis"
+    },
+    {
+      "course_name": "Photography for Beginners",
+      "price": 19.99,
+      "rating": 4.2,
+      "image": "https://i.ibb.co/k83vgbr/maxresdefault.jpg",
+      "total_enrolment": 500,
+      "enrol": 200,
+      "short_desc": "Start your photography journey with essential techniques.",
+      "mentor_name": "Michael Lee"
+    },
+    {
+      "course_name": "Mobile App Development",
+      "price": 54.99,
+      "rating": 4.9,
+      "image": "https://i.ibb.co/S7wxLwc/Rectangle-2-1.png",
+      "total_enrolment": 1800,
+      "enrol": 700,
+      "short_desc": "Create mobile apps for iOS and Android platforms.",
+      "mentor_name": "Sophie Turner"
+    },
+    {
+      "course_name": "Creative Writing Workshop",
+      "price": 34.99,
+      "rating": 4.4,
+      "image": "https://i.ibb.co/52cR12M/Rectangle-2-6.png",
+      "total_enrolment": 700,
+      "enrol": 250,
+      "short_desc": "Unleash your creativity with guided writing exercises.",
+      "mentor_name": "William Brown"
+    },
+    {
+      "course_name": "Machine Learning Essentials",
+      "price": 69.99,
+      "rating": 4.8,
+      "image": "https://i.ibb.co/YcJvDMs/Rectangle-2-5.png",
+      "total_enrolment": 2000,
+      "enrol": 800,
+      "short_desc": "Introduction to machine learning algorithms and applications.",
+      "mentor_name": "Olivia White"
+    },
+    {
+      "course_name": "Business Finance ",
+      "price": 49.99,
+      "rating": 4.6,
+      "image": "https://i.ibb.co/MDH3rD8/Financial-Management.png",
+      "total_enrolment": 1300,
+      "enrol": 450,
+      "short_desc": "Understand the basics of business finance and financial management.",
+      "mentor_name": "Daniel Adams"
+    },
+    {
+      "course_name": "Artificial Intelligence",
+      "price": 59.99,
+      "rating": 4.7,
+      "image": "https://i.ibb.co/7VrQmpb/Rectangle-2-3.png",
+      "total_enrolment": 1600,
+      "enrol": 600,
+      "short_desc": "Demystifying artificial intelligence and its real-world applications.",
+      "mentor_name": "Sophia Chen"
+    },
+    {
+      "course_name": "E-commerce Strategies ",
+      "price": 29.99,
+      "rating": 4.3,
+      "image": "https://i.ibb.co/Bz3rf3b/Rectangle-3-1.png",
+      "total_enrolment": 900,
+      "enrol": 300,
+      "short_desc": "Strategies for building and growing successful e-commerce businesses.",
+      "mentor_name": "David Miller"
+    },
+    {
+      "course_name": "Language Learning ",
+      "price": 44.99,
+      "rating": 4.5,
+      "image": "https://i.ibb.co/PWzChZM/Rectangle-2-4.png",
+      "total_enrolment": 1100,
+      "enrol": 400,
+      "short_desc": "Master multiple languages with effective language learning techniques.",
+      "mentor_name": "Isabella Garcia"
+    }
+  ]
+  
