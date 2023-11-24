@@ -3,7 +3,7 @@ import { FaAngellist } from "react-icons/fa";
 
 const Navbar = () => {
   const navLink = (
-    <div className="flex  gap-8 items-center font-inter font-semibold  text-xl">
+    <div className="flex flex-col lg:flex-row  gap-8 items-start lg:items-center font-inter font-semibold  text-xl">
     <NavLink to='/' className={({ isActive }) =>
           isActive
             ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
