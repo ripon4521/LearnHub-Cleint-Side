@@ -4,6 +4,7 @@ import Collabration from "../Collabration/Collabration";
 import CourseCreation from "../CourseCreationBanner/CourseCreation";
 import Courses from "../Courses/Courses";
 import Navbar from "../Navbar/Navbar";
+import TotalUsers from "../TotalUsers/TotalUsers";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       </div>
       <CourseCreation></CourseCreation>
       <div className="container mx-auto"><Courses></Courses> </div>
+      <TotalUsers></TotalUsers>
     </>
   );
 };
