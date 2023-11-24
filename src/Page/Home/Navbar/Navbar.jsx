@@ -3,12 +3,24 @@ import { FaAngellist } from "react-icons/fa";
 
 const Navbar = () => {
   const navLink = (
-    <div className="flex gap-5 items-center">
-    <NavLink> <a>Item 1</a></NavLink>
-    <NavLink> <a>Item 1</a></NavLink>
-    <NavLink> <a>Item 1</a></NavLink>
-    <NavLink> <a>Item 1</a></NavLink>
-    <div>fuckk you</div>
+    <div className="flex  gap-8 items-center font-inter font-semibold  text-xl">
+    <NavLink to='/' className={({ isActive }) =>
+          isActive
+            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
+            : " font-inter text-xl text-white"
+        }> <a>Home</a></NavLink>
+    <NavLink to='/allClasses' className={({ isActive }) =>
+          isActive
+            ? "  font-inter text-xl font-semibold text-yellow-400"
+            : " font-inter text-xl "
+        }> <a>All Calsses</a></NavLink>
+    <NavLink to='/tech' className={({ isActive }) =>
+          isActive
+            ? "  font-inter text-xl font-semibold text-yellow-400"
+            : " font-inter text-xl "
+        }> <a>Teach on Learn<span>Hub</span></a></NavLink>
+
+    
      
      
     </div>
@@ -42,13 +54,13 @@ const Navbar = () => {
               {navLink}
             </ul>
           </div>
-          <a className=" text-xl"><FaAngellist /> <span>Learn<span>Hub</span></span></a>
+          <a className=" drop-shadow-lg flex items-center font-inter font-bold gap-1 text-4xl"><span className="text-4xl "><FaAngellist /></span> <span>Learn<span className="text-[#ffd24d]">Hub</span></span></a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLink}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="bg-yellow-400 px-3 font-inter rounded font-semibold text-xl cursor-pointer py-2">Log in</a>
         </div>
       </div>
     </div>

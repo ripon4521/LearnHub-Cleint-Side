@@ -1,3 +1,4 @@
+import Banner from "../Banner/Banner";
 import BlcakFriday from "../BlackFriday/BlcakFriday";
 import Navbar from "../Navbar/Navbar";
 
@@ -9,6 +10,7 @@ const Home = () => {
            <div className="container mx-auto">
             
            <Navbar></Navbar>
+           <Banner></Banner>
            </div>
            
         </>

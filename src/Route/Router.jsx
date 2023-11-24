@@ -13,4 +13,8 @@ import Home from "../Page/Home/Home/Home";
         {
             path:"/",
             element:<Home></Home>
-        }] }])
+        },{
+            path:'/allClasses',
+            element:<h1>All Class</h1>
+        }
+    ] }])
