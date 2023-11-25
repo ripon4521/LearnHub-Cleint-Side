@@ -17,16 +17,16 @@ const Home = () => {
            <title>LearnHub || Home</title>
            
        </Helmet>
-      <BlcakFriday></BlcakFriday>
+     
       <div className="container mx-auto">
-        <Navbar></Navbar>
+       
         <Banner></Banner>
       </div>
       <CourseCreation></CourseCreation>
       <div className="container mx-auto"><Courses></Courses> </div>
       <TotalUsers></TotalUsers>
       <Testimonils></Testimonils>
-      <Footer></Footer>
+     
     </>
   );
 };

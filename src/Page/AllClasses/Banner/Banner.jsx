@@ -15,6 +15,9 @@ const Banner = () => {
         }
     })
 //    console.log(isLoading);
+if (isLoading) {
+   return <span className="loading md:w-[200px] md:ml-[900px] mx-auto loading-spinner "></span>
+}
 
     return (
         <div>
@@ -46,10 +49,10 @@ const Banner = () => {
         <h1 className="md:text-4xl text-2xl drop-shadow-lg font-inter font-bold mt-40 divider">Our All Superstar Classes Here </h1>
         <div className="grid p-2  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-28">
         {
+            
         courses.map(item=><BannerCard item={item} key={item._id}></BannerCard>)
        }
-    
-        
+   
         </div>
         <button className=" mt-10 font-inter font-bold  text-white text-xl rounded  bg-sky-500 flex  px-4 py-3 mx-auto">See More</button>
 

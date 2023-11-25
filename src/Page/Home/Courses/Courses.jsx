@@ -9,10 +9,11 @@ import CourseCard from "./CourseCard";
 const Courses=()=> {
     const [data,setData]=useState([]);
     useEffect(()=>{
-        fetch('course.json')
+        fetch('http://localhost:5000/courses')
         .then(res=> res.json())
         .then(daa=>setData(daa))
     },[]);
+
     console.log(data);
 
     var settings = {
@@ -62,7 +63,7 @@ const Courses=()=> {
         
         <Slider {...settings}>
             {
-                highestEnroll.map(item=> <CourseCard item={item}></CourseCard>)
+                highestEnroll.map(item=> <CourseCard key={item._id} item={item}></CourseCard>)
             }
          
         </Slider>

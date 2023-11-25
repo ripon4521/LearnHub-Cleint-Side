@@ -9,7 +9,7 @@ const TotalUsers = () => {
     <div className="   text-center">
       
       <h2 className=" lg:ml-96  drop-shadow-lg font-inter  font-semibold  text-black sm:text-5xl">
-         <span  className=" drop-shadow-lg flex items-center font-inter font-bold gap-1 text-4xl">Trusted by users<span className="text-4xl  "><FaAngellist /></span> <span>Learn<span className="text-[#ffd24d]">Hub</span></span></span>
+         <span  className=" drop-shadow-lg flex items-center font-inter font-bold gap-1 text-4xl">Trusted by users<span className="text-4xl  "><FaAngellist /></span> <span>Learn<span className="bg-[#ffd24d] p-1 rounded  text-black">Hub</span></span></span>
       </h2>
 
       <p className="mt-4 font-inter drop-shadow-lg sm:text-xl">

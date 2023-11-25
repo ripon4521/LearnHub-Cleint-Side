@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import bannerImg from '../../../assets/42393650-removebg-preview.png'
 const Banner = () => {
     return (
@@ -8,7 +9,7 @@ const Banner = () => {
                 <h1 className='text-7xl font-inter font-bold mt-4 drop-shadow-lg'>Teach Anything, Learn Anytime</h1>
                 <p className='text-xl font-inter drop-shadow-lg mt-4'>Upload your course tutorial & become an online teacher. Earn as much as you can, its FREE! Also, Browse our course categories where you can develop your skills anytime from the best professionals.</p>
                 <div className='mt-5 flex gap-5'>
-            <button className='px-3 py-2 bg-gradient-to-r from-yellow-500 drop-shadow-lg font-inter font-bold text-xl rounded'>Start Teaching</button>
+            <Link to='/startTeaching' className='px-3 py-2 bg-gradient-to-r from-yellow-500 drop-shadow-lg font-inter font-bold text-xl rounded'>Start Teaching</Link>
             <button className='px-3 py-2 bg-gradient-to-r from-purple-500  drop-shadow-lg font-inter font-bold text-xl rounded '>Start Learning</button>
         </div>
             </div>

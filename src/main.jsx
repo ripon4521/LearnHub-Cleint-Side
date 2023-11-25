@@ -9,13 +9,17 @@ import {
 
 import { router } from './Route/Router.jsx';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import AuthProvider from './providers/AuthProvider.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <QueryClientProvider client={queryClient}>
+  
+   <QueryClientProvider client={queryClient}>
+   <AuthProvider>
      <RouterProvider router={router} />
-
+     </AuthProvider>
     </QueryClientProvider>
+ 
     
   </React.StrictMode>,
 )

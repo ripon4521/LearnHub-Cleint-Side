@@ -3,8 +3,53 @@ import { MdFavorite, MdOutlineShoppingCart, MdShare, MdStar } from "react-icons/
 import { Rating } from '@smastrom/react-rating'
 
 import '@smastrom/react-rating/style.css'
+import { axiosPublic } from "../../../Hooks/useAxiosPublic";
+import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 
 const CourseCard = ({item}) => {
+    // const [isEnroll,setIsEnroll]=useState(false)
+    // setState(!this.state.);
+    // console.log(item);
+
+    const {  data:enroll = []}=useQuery({
+        queryKey:['enroll'],
+        queryFn: async() =>{
+            const res = await axiosPublic.get(`/enroll`);
+            // console.log(res.data);
+            return res.data;
+        }
+    })
+
+   
+
+   
+        const handleEnroll=(_id)=>{
+      
+         
+        
+                    axiosPublic.post('/enroll', item)
+                .then(res=>{
+                    
+                    toast.success('Course added Cart!')
+                    console.log(res);
+                })
+            
+            
+
+         
+           
+        }
+        // console.log(isEnroll);
+        // console.log(data.data?.acknowledged);
+                
+
+
+
+
+
     return (
         <div className="flex  ">
            <div className=" h-[400px] overflow-hidden bg-white rounded-lg shadow-lg 800">
@@ -35,7 +80,10 @@ const CourseCard = ({item}) => {
         
         <div className="flex items-center justify-between mt-2">
             <h2 className="text-2xl mt-3 font-bold font-inter text-emerald-600">{item.price}$</h2>
-            <button className="px-3 mt-2 text-white py-2 text-xl font-inter font-semibold rounded  bg-gradient-to-r from-yellow-500 to-yellow-600">Buy Now</button>
+           {/* {
+            isEnroll? <button  className="px-3 disabled mt-2 text-white py-2 text-xl font-inter font-semibold cursor-text rounded  bg-gradient-to-r from-yellow-200 to-yellow-300">Added</button> :<button onClick={()=>handleEnroll(item._id)} className="px-3 disabled mt-2 text-white py-2 text-xl font-inter font-semibold rounded  bg-gradient-to-r from-yellow-500 to-yellow-600">Enroll</button>
+           } */}
+            <Link to='/cart'  onClick={()=>handleEnroll(item._id)} className="px-3 disabled mt-2 text-white py-2 text-xl font-inter font-semibold rounded  bg-gradient-to-r from-yellow-500 to-yellow-600">Enroll</Link>
         </div>
       
     </div>
