@@ -9,7 +9,7 @@ import Banner from "../Banner/Banner";
 
 const AllClasses = () => {
     return (
-        <div>
+        <div className="">
                <Helmet>
            
                 <title>LearnHub || AllClasses</title>
