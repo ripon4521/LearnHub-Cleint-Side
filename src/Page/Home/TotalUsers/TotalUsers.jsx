@@ -1,3 +1,4 @@
+import { FaAngellist } from "react-icons/fa";
 
 
 const TotalUsers = () => {
@@ -5,9 +6,10 @@ const TotalUsers = () => {
         <div>
             <section className="bg-white">
   <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-    <div className="mx-auto max-w-3xl text-center">
-      <h2 className="text-3xl  drop-shadow-lg font-inter  font-semibold  text-black sm:text-5xl">
-        Trusted by users <span> LearnHub</span>
+    <div className="   text-center">
+      
+      <h2 className=" lg:ml-96  drop-shadow-lg font-inter  font-semibold  text-black sm:text-5xl">
+         <span  className=" drop-shadow-lg flex items-center font-inter font-bold gap-1 text-4xl">Trusted by users<span className="text-4xl  "><FaAngellist /></span> <span>Learn<span className="text-[#ffd24d]">Hub</span></span></span>
       </h2>
 
       <p className="mt-4 font-inter drop-shadow-lg sm:text-xl">

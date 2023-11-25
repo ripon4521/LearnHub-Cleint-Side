@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Page/Home/Home/Home";
+import AllClasses from "../Page/AllClasses/AllClasses/AllClasses";
 
 
 
@@ -15,6 +16,6 @@ import Home from "../Page/Home/Home/Home";
             element:<Home></Home>
         },{
             path:'/allClasses',
-            element:<h1>All Class</h1>
+            element:<AllClasses></AllClasses>
         }
     ] }])

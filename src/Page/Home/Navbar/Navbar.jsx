@@ -7,16 +7,16 @@ const Navbar = () => {
     <NavLink to='/' className={({ isActive }) =>
           isActive
             ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
-            : " font-inter text-xl text-white"
+            : " font-inter text-xl "
         }> <a>Home</a></NavLink>
     <NavLink to='/allClasses' className={({ isActive }) =>
           isActive
-            ? "  font-inter text-xl font-semibold text-yellow-400"
+            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
             : " font-inter text-xl "
         }> <a>All Calsses</a></NavLink>
     <NavLink to='/tech' className={({ isActive }) =>
           isActive
-            ? "  font-inter text-xl font-semibold text-yellow-400"
+            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
             : " font-inter text-xl "
         }> <a>Teach on Learn<span>Hub</span></a></NavLink>
 
