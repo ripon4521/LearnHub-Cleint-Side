@@ -5,45 +5,49 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { axiosPublic } from "../../../Hooks/useAxiosPublic";
 import toast from "react-hot-toast";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
+import Login from "../Login/Login";
+import useAxiosSecoure from "../../../Hooks/useAxiosSecoure";
 
 const CourseCard = ({item}) => {
+    const {user}=useContext(AuthContext)
+    const axiosSecure =useAxiosSecoure();
+
     // const [isEnroll,setIsEnroll]=useState(false)
     // setState(!this.state.);
     // console.log(item);
 
-    const {  data:enroll = []}=useQuery({
-        queryKey:['enroll'],
-        queryFn: async() =>{
-            const res = await axiosPublic.get(`/enroll`);
-            // console.log(res.data);
-            return res.data;
-        }
-    })
 
-   
+        const handleEnroll = item =>{
+            const {image, course_name,mentor_name,price,enrol,rating}=item;
+            if (user ) {
+       
+                // Send data on database 
+            const cartItem ={
+                email: user?.email,
+                course_name,
+                mentor_name,
+                rating,
+                enrol,
+                image,
+                price }
 
-   
-        const handleEnroll=(_id)=>{
-      
-         
-        
-                    axiosPublic.post('/enroll', item)
-                .then(res=>{
-                    
-                    toast.success('Course added Cart!')
-                    console.log(res);
-                })
+
+            axiosSecure.post('/enroll',cartItem)
+            .then(result =>{
+               
+                toast.success("Added to the Cart!")
             
-            
+                console.log(result);
+            })
+          
+    
 
-         
-           
-        }
-        // console.log(isEnroll);
-        // console.log(data.data?.acknowledged);
+            }else{toast.error('Please Login')}   }
+
                 
 
 
@@ -80,10 +84,10 @@ const CourseCard = ({item}) => {
         
         <div className="flex items-center justify-between mt-2">
             <h2 className="text-2xl mt-3 font-bold font-inter text-emerald-600">{item.price}$</h2>
-           {/* {
-            isEnroll? <button  className="px-3 disabled mt-2 text-white py-2 text-xl font-inter font-semibold cursor-text rounded  bg-gradient-to-r from-yellow-200 to-yellow-300">Added</button> :<button onClick={()=>handleEnroll(item._id)} className="px-3 disabled mt-2 text-white py-2 text-xl font-inter font-semibold rounded  bg-gradient-to-r from-yellow-500 to-yellow-600">Enroll</button>
-           } */}
-            <Link to='/cart'  onClick={()=>handleEnroll(item._id)} className="px-3 disabled mt-2 text-white py-2 text-xl font-inter font-semibold rounded  bg-gradient-to-r from-yellow-500 to-yellow-600">Enroll</Link>
+           {
+            user?  <Link to='/cart'  onClick={()=>handleEnroll(item)} className="px-3 disabled mt-2 text-white py-2 text-xl font-inter font-semibold rounded  bg-gradient-to-r from-yellow-500 to-yellow-600">Enroll</Link> :  <Link   onClick={()=>handleEnroll(item)} className="px-3 disabled mt-2 text-white py-2 text-xl font-inter font-semibold rounded  bg-gradient-to-r from-yellow-500 to-yellow-600">Enroll</Link>
+           }
+            {/* <Link to='/cart'  onClick={()=>handleEnroll(item)} className="px-3 disabled mt-2 text-white py-2 text-xl font-inter font-semibold rounded  bg-gradient-to-r from-yellow-500 to-yellow-600">Enroll</Link> */}
         </div>
       
     </div>

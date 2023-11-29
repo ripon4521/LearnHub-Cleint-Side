@@ -1,13 +1,70 @@
+import { useContext } from "react";
 import { FaAngellist } from "react-icons/fa";
+import { AuthContext } from "../../../providers/AuthProvider";
+
+import toast from "react-hot-toast";
+import { useLocation, useNavigate } from "react-router-dom";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 
 
 
 const Regester = () => {
+    // const { register,reset, handleSubmit,formState:{errors} } = useForm();
+    const { createUser ,updateuserProfile}=useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname|| '/'
+    const axiospublic = useAxiosPublic()
+  
+    const handleSubmit = ( e) => {
+        e.preventDefault()
+        const email = e.target.email.value
+        const password = e.target.password.value
+        const name = e.target.name.value
+        const photoURL = e.target.photoURL.value
+        console.log(email,password,name,photoURL);
+
+        createUser(email, password)
+          .then(result=>{
+            toast.success("User Create  SuccessFull", {
+              duration: 5000,
+            });
+             console.log(result.user);
+              updateuserProfile(name , photoURL)
+          .then(result=>{
+        
+  // Create User Enty in Datavase  
+          const userInfo = {
+        name,
+        email
+      }
+   axiospublic.post('/users',userInfo)
+   .then(res=>{
+    if (res.data.insertedId) {
+
+      toast.success("User Create  SuccessFull", {
+        duration: 5000,
+      });
+          
+      navigate(from ,{replace:true});
+    }
+   })
+  
+  })
+  
+  .catch(err=>console.log(err.message))
+      })
+    }; 
+  
+
+    
+
+
     return (
         <div>
         <section className="  mx-auto   " >
 <div className="container flex items-center justify-center  px-6 mx-auto">
-    <form  className="w-full max-w-md">
+    <form onSubmit={handleSubmit}  className="w-full max-w-md">
     <div className="flex md:ml-10 lg:ml-0  justify-center  items-center">
     <a className=" drop-shadow-lg flex items-center font-inter font-bold gap-1 text-4xl"><span className="text-4xl "><FaAngellist /></span> <span>Learn<span className="bg-[#ffd24d] p-1 rounded  text-black">Hub</span></span></a>
 </div>
@@ -38,7 +95,7 @@ const Regester = () => {
             </svg>
             </span>
 
-            <input type="text" className="block w-full py-3 border rounded-lg px-11  focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Photo Url"/>
+            <input name="photoURL" type="text" className="block w-full py-3 border rounded-lg px-11  focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Photo Url"/>
         </div>
 
         <div className="relative flex items-center mt-6">

@@ -5,6 +5,9 @@ import AllClasses from "../Page/AllClasses/AllClasses/AllClasses";
 import Regester from "../Page/Home/Regeister/Regester";
 import Teaching from "../Page/Teaching/Teaching/Teaching";
 import Cart from "../Page/Cart/Cart";
+import Dashborad from "../Layout/Dashboard";
+import Mycart from "../dashboard/Mycart";
+
 
 
 
@@ -32,4 +35,16 @@ import Cart from "../Page/Cart/Cart";
             element:<Cart></Cart>
         }
 
-    ] }])
+    ] },{
+        path:'/dashboard',
+        element:<Dashborad></Dashborad>,
+        children:[
+            {
+                path:'mycart',
+                element:<Mycart></Mycart>
+            }
+        ]
+    }
+
+
+])

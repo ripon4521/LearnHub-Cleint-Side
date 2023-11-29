@@ -111,7 +111,7 @@ const Navbar = () => {
                         <a className="justify-between font-inter text-xl">Post a Class</a>
                       </li>
                       <li>
-                        <a className="justify-between font-inter text-xl">User Dashboard</a>
+                        <NavLink to='/dashboard' className="justify-between font-inter text-xl">User Dashboard</NavLink>
                       </li>
   
                       <li className="" >

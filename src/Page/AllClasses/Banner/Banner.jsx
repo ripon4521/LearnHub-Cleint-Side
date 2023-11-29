@@ -4,7 +4,9 @@ import  { axiosPublic } from "../../../Hooks/useAxiosPublic";
 import { useQuery } from "react-query";
 import BannerCard from "./BannerCard";
 
+
 const Banner = () => {
+  
 
     const {  isLoading, data:courses = []}=useQuery({
         queryKey:['courses'],

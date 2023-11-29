@@ -5,6 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import {   useLocation, useNavigate } from "react-router-dom";
+import { axiosPublic } from "../../../Hooks/useAxiosPublic";
 
 
 
@@ -17,6 +18,7 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleLogin()
           .then((result) => {
+           
             navigate(from ,{replace:true});
             window.location.reload(true);
         //    console.log(result);
@@ -26,13 +28,13 @@ const Login = () => {
             
            
             console.log(result);
-            //   const userinfo ={
-            //     email: result.user?.email,
-            //     name: result.user?.displayName
-            //   }
+              const userinfo ={
+                email: result.user?.email,
+                name: result.user?.displayName
+              }
               
-            //   axiosPublic.post('/users',userinfo)
-            //   .then(res=>console.log(res))
+              axiosPublic.post('/users',userinfo)
+              .then(res=>console.log(res))
         
        
     
@@ -44,6 +46,10 @@ const Login = () => {
           });
       };
 
+      const handleLogin = (e)=>{
+        e.preventDefault()
+        console.log('clicked');
+      }
 
 
 
@@ -62,14 +68,14 @@ const Login = () => {
     return (
        
               <div className=" flex justify-center items-center gap-20 ">
-                <Toaster></Toaster>
+              
           
             <div className="w-full max-w-sm p-6    rounded-lg  ">
             <div className="flex md:ml-10 lg:ml-0  justify-center  items-center">
     
     <a className=" drop-shadow-lg flex items-center font-inter font-bold gap-1 text-4xl"><span className="text-4xl "><FaAngellist /></span> <span>Learn<span className="bg-[#ffd24d] p-1 rounded  text-black">Hub</span></span></a>
     </div>
-    <form  className="mt-6">
+    <form onSubmit={handleLogin}  className="mt-6">
         <div>
             <label name="email"  className="block font-roboto text-yellow-500  ">Email</label>
             <input name='email' required type="email" className="block w-full px-4 py-2 mt-2   border rounded-lg   focus:border-yellow-400 dark:focus:border-yellow-300 focus:ring-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40" />
