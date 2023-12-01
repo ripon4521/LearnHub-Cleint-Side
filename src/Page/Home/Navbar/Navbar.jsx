@@ -32,7 +32,7 @@ const Navbar = () => {
             ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
             : " font-inter text-xl "
         }> <a>All Calsses</a></NavLink>
-    <NavLink to='/tech' className={({ isActive }) =>
+    <NavLink to='/teachonlearnhub' className={({ isActive }) =>
           isActive
             ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
             : " font-inter text-xl "
@@ -108,10 +108,10 @@ const Navbar = () => {
                         <NavLink to='/cart' className="justify-between font-inter text-xl">My Cart</NavLink>
                       </li>
                       <li>
-                        <a className="justify-between font-inter text-xl">Post a Class</a>
+                        <NavLink to='teachonlearnhub' className="justify-between font-inter text-xl">Post a Class</NavLink>
                       </li>
                       <li>
-                        <NavLink to='/dashboard' className="justify-between font-inter text-xl">User Dashboard</NavLink>
+                        <NavLink to='/dashboard/enrollClass' className="justify-between font-inter text-xl">User Dashboard</NavLink>
                       </li>
   
                       <li className="" >

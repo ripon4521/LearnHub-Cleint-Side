@@ -7,6 +7,12 @@ import Teaching from "../Page/Teaching/Teaching/Teaching";
 import Cart from "../Page/Cart/Cart";
 import Dashborad from "../Layout/Dashboard";
 import Mycart from "../dashboard/Mycart";
+import AllUsers from "../dashboard/Admin/AllUsers/AllUsers";
+import AddClass from "../dashboard/User/AddClass";
+import EnrollClass from "../dashboard/User/EnrollClass";
+import Assignment from "../dashboard/User/Assignment";
+import Profile from "../dashboard/Profile/Profile";
+
 
 
 
@@ -33,6 +39,9 @@ import Mycart from "../dashboard/Mycart";
         },{
             path:'/cart',
             element:<Cart></Cart>
+        },{
+            path:'teachonlearnhub',
+            element:<Teaching></Teaching>
         }
 
     ] },{
@@ -42,6 +51,26 @@ import Mycart from "../dashboard/Mycart";
             {
                 path:'mycart',
                 element:<Mycart></Mycart>
+            },
+            {
+                path:'allusers',
+                element:<AllUsers></AllUsers>
+            },{
+                path:'addclass',
+                element:<AddClass></AddClass>
+            },
+            {
+                path:'enrollClass',
+                element:<EnrollClass></EnrollClass>
+            },{
+                path:'assignment',
+                element:<Assignment></Assignment>
+            },{
+                path:'profile',
+                element:<Profile></Profile>
+            },{
+                path:'assignment',
+                element:<Assignment></Assignment>
             }
         ]
     }

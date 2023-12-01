@@ -1,7 +1,4 @@
 import { useContext } from "react";
-import BlcakFriday from "../../Home/BlackFriday/BlcakFriday";
-import Footer from "../../Home/Footer/Footer";
-import Navbar from "../../Home/Navbar/Navbar";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { axiosPublic } from "../../../Hooks/useAxiosPublic";
 import toast from "react-hot-toast";
@@ -21,6 +18,7 @@ const Teaching = () => {
         const image = form.url.value;
         const short_desc = form.desc.value;
         const mentor_name=user?.displayName;
+        const pending='pending';
         const courseInfo ={
             course_name,
             total_enrolment,
@@ -29,6 +27,7 @@ const Teaching = () => {
             image,
             short_desc,
             mentor_name,
+            pending
 
         }
         axiosPublic.post('/uploadCourse',courseInfo)
@@ -47,7 +46,7 @@ const Teaching = () => {
            
       
             <div className="bg-slate-300 p-16    mt-10">
-               <div className="container mx-auto flex  justify-around"> <h2 className="text-6xl font-inter font-semibold  drop-shadow-lg ">Become An Online Instructor</h2>
+               <div className="container mx-auto flex  justify-around"> <h2 className="text-6xl font-inter font-semibold  drop-shadow-lg ">Welcome to {user.displayName}</h2>
                 <h3 className=" drop-shadow-lg text-4xl text-right">“Start Your Exceptional Career With Instructory <br /> The Online Teaching Marketplace And eLearning  Platform”</h3></div>
 
           

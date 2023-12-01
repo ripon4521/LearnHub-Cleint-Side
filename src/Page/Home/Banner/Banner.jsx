@@ -19,7 +19,7 @@ const Banner = () => {
         {
             user ?     <Link to='/startTeaching' className='px-3 py-2 bg-gradient-to-r from-yellow-500 drop-shadow-lg font-inter font-bold text-xl rounded'>Start Teaching</Link> :     <Link onClick={handleteaxhing}  className='px-3 py-2 bg-gradient-to-r from-yellow-500 drop-shadow-lg font-inter font-bold text-xl rounded'>Start Teaching</Link>
         }
-            <button className='px-3 py-2 bg-gradient-to-r from-purple-500  drop-shadow-lg font-inter font-bold text-xl rounded '>Start Learning</button>
+            <Link to='/allClasses' className='px-3 py-2 bg-gradient-to-r from-purple-500  drop-shadow-lg font-inter font-bold text-xl rounded '>Start Learning</Link>
         </div>
             </div>
             <img className='  lg:w-[1400px] mt-5 lg:mt-0' src={bannerImg} alt="" />
