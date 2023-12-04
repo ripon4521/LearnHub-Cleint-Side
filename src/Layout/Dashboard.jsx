@@ -48,18 +48,51 @@ const Dashborad = () => {
             
        
              {isAdmin ?  <>
-                <li className=" items-center gap-2 mt-10 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><FaHome></FaHome></span>  <NavLink to="">Teacher Requset</NavLink></li>
-              <li className=" items-center gap-2 mt-5 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><FaUtensils /></span> <NavLink to="allusers">Users</NavLink></li>
-              <li className=" items-center gap-2 mt-5  text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"> <TfiMenuAlt /></span><NavLink to="/dashboard/mangebooking">All classes</NavLink></li>
-              <li className=" items-center gap-2 mt-5 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><FaUsers /></span> <NavLink to="profile">Profile</NavLink></li>
+             
+                <li className=" items-center gap-2 mt-10 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><FaHome></FaHome></span>  <NavLink className={({ isActive }) =>
+          isActive
+            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
+            : " items-center gap-2 text-black hover:text-white flex font-cinzel text-xl "
+        } to="teacherRequest">Teacher Requset</NavLink></li>
+              <li className=" items-center gap-2 mt-5 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><FaUtensils /></span> <NavLink className={({ isActive }) =>
+          isActive
+            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
+            : " items-center gap-2 text-black hover:text-white flex font-cinzel text-xl "
+        } to="allusers">Users</NavLink></li>
+              <li className=" items-center gap-2 mt-5  text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"> <TfiMenuAlt /></span><NavLink className={({ isActive }) =>
+          isActive
+            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
+            : " items-center gap-2 text-black hover:text-white flex font-cinzel text-xl "
+        } to="classes">All classes</NavLink></li>
+              <li className=" items-center gap-2 mt-5 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><FaUsers /></span> <NavLink className={({ isActive }) =>
+          isActive
+            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
+            : " items-center gap-2 text-black hover:text-white flex font-cinzel text-xl "
+        } to="profile">Profile</NavLink></li>
 
                 </> : <>
-                <li className=" items-center gap-2 mt-10 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><FaHome></FaHome></span>  <NavLink to="enrollClass">My Enroll Class </NavLink></li>
-              <li className=" items-center gap-2 mt-5 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><CgProfile /></span> <NavLink to="profile"> Profile</NavLink></li>
-              <li className=" items-center gap-2 mt-5 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"> <FaPlus /></span><NavLink to="addclass">Add Class </NavLink></li>
+                <li className=" items-center gap-2 mt-10 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><FaHome></FaHome></span>  <NavLink className={({ isActive }) =>
+          isActive
+            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
+            : " items-center gap-2 text-black hover:text-white flex font-cinzel text-xl "
+        } to="enrollClass">My Enroll Class </NavLink></li>
+              <li className=" items-center gap-2 mt-5 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><CgProfile /></span> <NavLink className={({ isActive }) =>
+          isActive
+            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
+            : " items-center gap-2 text-black hover:text-white flex font-cinzel text-xl "
+        } to="profile"> Profile</NavLink></li>
+              <li className=" items-center gap-2 mt-5 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"> <FaPlus /></span><NavLink  className={({ isActive }) =>
+          isActive
+            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
+            : " items-center gap-2 text-black hover:text-white flex font-cinzel text-xl "
+        } to="addclass">Add Class </NavLink></li>
       
              
-              <li className=" items-center gap-2 mt-5 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><RiFeedbackFill /></span> <NavLink to="assignment">Assignment</NavLink></li>
+              <li className="  items-center gap-2 mt-5 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><RiFeedbackFill /></span> <NavLink className={({ isActive }) =>
+          isActive
+            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
+            : " items-center gap-2 text-black hover:text-white flex font-cinzel text-xl "
+        } to="assignment">Assignment</NavLink></li>
 
                 </>} 
     
@@ -67,8 +100,13 @@ const Dashborad = () => {
               <div className="divider divider-error"></div>
               {/* Shared Component or Public dehte parbe */}
               <li className=" items-center gap-2 mt-5 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><FaHome></FaHome></span>  <NavLink to="/"> Home </NavLink></li>
-              <li className=" items-center gap-2 mt-4 text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><IoIosMenu /></span>  <NavLink to="/meanu"> All Class </NavLink></li>
-         
+              <li className=" mt-5  items-center gap-2  text-black hover:text-white flex font-cinzel text-xl"> <span className="text-2xl"><IoIosMenu /></span>  <NavLink className={({ isActive }) =>
+          isActive
+            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
+            : " items-center gap-2  text-black hover:text-white flex font-cinzel text-xl "
+        } to="/allClasses"> All Class </NavLink></li>
+           
+
           </ul>
           </div>
           <div className="flex-1">

@@ -1,7 +1,19 @@
 import { FaAngellist } from "react-icons/fa";
+import useUsers from "../../../Hooks/useUsers";
+import useSales from "../../../Hooks/useSales";
+import useCourse from "../../../Hooks/useCourse";
+
 
 
 const TotalUsers = () => {
+    const [users] = useUsers();
+    const [sales] = useSales();
+    const [courses] = useCourse()
+  
+    
+
+  
+
     return (
         <div>
             <section className="bg-white">
@@ -25,11 +37,11 @@ const TotalUsers = () => {
           className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
         >
           <dt className="order-last drop-shadow-lg font-inter text-lg font-medium text-gray-500">
-            Total Sales
+            Total Users
           </dt>
 
           <dd className="text-4xl drop-shadow-lg text-yellow-400  font-rancho md:text-6xl">
-            $4.8m
+            {users?.length}
           </dd>
         </div>
 
@@ -37,20 +49,20 @@ const TotalUsers = () => {
           className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
         >
           <dt className="order-last drop-shadow-lg font-inter text-lg font-medium text-gray-500">
-            Official Addons
+         Total Course
           </dt>
 
-          <dd className="text-4xl font-rancho drop-shadow-lg text-yellow-400 md:text-6xl">24k</dd>
+          <dd className="text-4xl font-rancho drop-shadow-lg text-yellow-400 md:text-6xl">{courses?.length}</dd>
         </div>
 
         <div
           className="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
         >
           <dt className="order-last   drop-shadow-lg font-inter text-lg font-medium text-gray-500">
-            Total Addons
+            Total Sales
           </dt>
 
-          <dd className="text-4xl text-yellow-400 font-rancho drop-shadow-lg md:text-6xl">86k</dd>
+          <dd className="text-4xl text-yellow-400 font-rancho drop-shadow-lg md:text-6xl">{sales?.length}</dd>
         </div>
       </dl>
     </div>

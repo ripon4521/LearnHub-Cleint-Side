@@ -6,10 +6,12 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 import toast, { Toaster } from "react-hot-toast";
 import userImg from "../../../assets/Collabration/download.png"
+import useAdmin from "../../../Hooks/useAdmin";
 
 const Navbar = () => {
     const  {user,logout}  = useContext(AuthContext);
     // console.log(user);
+    const[isAdmin] = useAdmin();
     const handleLogout = () => {
         logout().then((result) => {
           toast.success("Log Out SuccessFull", {
@@ -32,11 +34,17 @@ const Navbar = () => {
             ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
             : " font-inter text-xl "
         }> <a>All Calsses</a></NavLink>
-    <NavLink to='/teachonlearnhub' className={({ isActive }) =>
-          isActive
-            ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
-            : " font-inter text-xl "
-        }> <a>Teach on Learn<span>Hub</span></a></NavLink>
+   {
+    user? <NavLink to='/teachonlearnhub' className={({ isActive }) =>
+    isActive
+      ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
+      : " font-inter text-xl "
+  }> <a>Teach on Learn<span>Hub</span></a></NavLink>:<NavLink to='/login'  className={({ isActive }) =>
+  isActive
+    ? "  font-inter text-xl font-semibold px-2 py-1 rounded bg-yellow-400"
+    : " font-inter text-xl "
+}> <a>Teach on Learn<span>Hub</span></a></NavLink>
+   }
 
     
      
@@ -111,7 +119,11 @@ const Navbar = () => {
                         <NavLink to='teachonlearnhub' className="justify-between font-inter text-xl">Post a Class</NavLink>
                       </li>
                       <li>
-                        <NavLink to='/dashboard/enrollClass' className="justify-between font-inter text-xl">User Dashboard</NavLink>
+                        {
+                          isAdmin ? <NavLink  to='/dashboard/teacherRequest'  className="justify-between font-inter text-xl">User Dashboard</NavLink> 
+                          :<NavLink to='/dashboard/enrollClass' className="justify-between font-inter text-xl">User Dashboard</NavLink>
+                        }
+                        
                       </li>
   
                       <li className="" >

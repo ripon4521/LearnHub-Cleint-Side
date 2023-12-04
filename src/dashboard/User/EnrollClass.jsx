@@ -119,10 +119,10 @@ The Online Teaching Marketplace And eLearning Platform”</p>
               <th></th>
                     <th>#</th>
                   
-              <th >Food Image</th>
+              <th >Course Image</th>
               </div>
             
-            <th>Food Name</th>
+            <th>Course Name</th>
                 <th>Mentor Name</th>
                 <th>Action</th>
              

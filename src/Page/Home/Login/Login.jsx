@@ -13,7 +13,7 @@ const Login = () => {
     const location = useLocation();
   const from = location.state?.from?.pathname || '/';
   const navigate = useNavigate();
-    const {  googleLogin } = useContext(AuthContext);
+    const {  googleLogin,sighnIn } = useContext(AuthContext);
 
     const handleGoogleLogin = () => {
         googleLogin()
@@ -48,7 +48,15 @@ const Login = () => {
 
       const handleLogin = (e)=>{
         e.preventDefault()
-        console.log('clicked');
+        // console.log('clicked');
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const passward =form.passward.value;
+        sighnIn(email,passward)
+        .then(result=> console.log(result))
+        .then(error=> console.log(error))
+
       }
 
 
@@ -77,7 +85,7 @@ const Login = () => {
     </div>
     <form onSubmit={handleLogin}  className="mt-6">
         <div>
-            <label name="email"  className="block font-roboto text-yellow-500  ">Email</label>
+            <label   className="block font-roboto text-yellow-500  ">Email</label>
             <input name='email' required type="email" className="block w-full px-4 py-2 mt-2   border rounded-lg   focus:border-yellow-400 dark:focus:border-yellow-300 focus:ring-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40" />
         </div>
 

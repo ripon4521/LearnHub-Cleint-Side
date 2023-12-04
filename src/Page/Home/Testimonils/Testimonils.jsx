@@ -10,9 +10,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
+import useFeedback from "../../../Hooks/useFeedback";
 
 
 const Testimonils = () => {
+    const [feedback] = useFeedback()
+    console.log(feedback);
     const [review,setReview]= useState([])
     useEffect(()=>{
         fetch('review.json')

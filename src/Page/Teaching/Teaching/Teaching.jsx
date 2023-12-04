@@ -46,7 +46,7 @@ const Teaching = () => {
            
       
             <div className="bg-slate-300 p-16    mt-10">
-               <div className="container mx-auto flex  justify-around"> <h2 className="text-6xl font-inter font-semibold  drop-shadow-lg ">Welcome to {user.displayName}</h2>
+               <div className="container mx-auto flex  justify-around"> <h2 className="text-6xl font-inter font-semibold  drop-shadow-lg ">Welcome to {user?.displayName}</h2>
                 <h3 className=" drop-shadow-lg text-4xl text-right">“Start Your Exceptional Career With Instructory <br /> The Online Teaching Marketplace And eLearning  Platform”</h3></div>
 
           

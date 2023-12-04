@@ -12,6 +12,9 @@ import AddClass from "../dashboard/User/AddClass";
 import EnrollClass from "../dashboard/User/EnrollClass";
 import Assignment from "../dashboard/User/Assignment";
 import Profile from "../dashboard/Profile/Profile";
+import TeachersReq from "../dashboard/Admin/TeachersReq/TeachersReq";
+import Login from "../Page/Login/Login";
+import Classes from "../dashboard/Admin/AllUsers/Classes";
 
 
 
@@ -40,8 +43,12 @@ import Profile from "../dashboard/Profile/Profile";
             path:'/cart',
             element:<Cart></Cart>
         },{
-            path:'teachonlearnhub',
+            path:'/teachonlearnhub',
             element:<Teaching></Teaching>
+        },
+        {
+            path:'/login',
+            element:<Login></Login>
         }
 
     ] },{
@@ -71,6 +78,12 @@ import Profile from "../dashboard/Profile/Profile";
             },{
                 path:'assignment',
                 element:<Assignment></Assignment>
+            },{
+                path:'teacherRequest',
+                element:<TeachersReq></TeachersReq>
+            },{
+                path:'classes',
+                element:<Classes></Classes>
             }
         ]
     }
