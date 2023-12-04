@@ -5,7 +5,7 @@ import useAuth from "./useAuth";
 // import { useEffect } from "react";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://learnhub-teal.vercel.app/",
 });
 const useAxiosSecoure = () => {
   const navigate = useNavigate();
@@ -32,8 +32,8 @@ const useAxiosSecoure = () => {
       const status = error.response.status;
       console.log("status error in the interceptor", status);
       if (status === 401 || status === 403) {
-        await logout();
-        navigate("/");
+        // await logout();
+        // navigate("/");
       }
       return Promise.reject(error);
     }

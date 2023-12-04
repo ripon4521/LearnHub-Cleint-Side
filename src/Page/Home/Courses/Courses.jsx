@@ -9,7 +9,7 @@ import CourseCard from "./CourseCard";
 const Courses=()=> {
     const [data,setData]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/courses')
+        fetch('https://learnhub-teal.vercel.app//courses')
         .then(res=> res.json())
         .then(daa=>setData(daa))
     },[]);
