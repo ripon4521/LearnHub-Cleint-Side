@@ -2,7 +2,7 @@
 # LearnHub Live Link(https://learn-hub-cfc03.web.app/)
 
 <div>
- <h1>This Website Feauters</h1>
+ <h1>This Website Feauters</h1> 
  </div>
 
 - Course Creation and Management: An intuitive interface for instructors to create, organize, and manage courses, including the ability to upload various types of content like text, videos, quizzes, and assignments.
