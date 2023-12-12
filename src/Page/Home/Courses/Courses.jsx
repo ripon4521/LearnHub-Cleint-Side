@@ -5,16 +5,19 @@ import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
 import "./course.css"
 import CourseCard from "./CourseCard";
+import useCourse from "../../../Hooks/useCourse";
 
 const Courses=()=> {
+  const [courses]=useCourse();
+  // console.log(courses);
     const [data,setData]=useState([]);
     useEffect(()=>{
-        fetch('https://learnhub-teal.vercel.app//courses')
+        fetch('https://learnhub-teal.vercel.app/courses')
         .then(res=> res.json())
         .then(daa=>setData(daa))
     },[]);
 
-    console.log(data);
+    // console.log(data);
 
     var settings = {
       dots: true,
@@ -53,7 +56,7 @@ const Courses=()=> {
       ]
     };
 
-    const highestEnroll = data.sort((a, b) => b.enrol- a.enrol);
+    const highestEnroll = courses.sort((a, b) => b.enrol- a.enrol);
 // console.log(booksSortedByYearAsc);
 // console.log(data);
 

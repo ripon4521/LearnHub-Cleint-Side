@@ -5,13 +5,13 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-apiKey:import.meta.env.VITE_apiKey,
-authDomain:import.meta.env.VITE_authDomain,
-projectId:import.meta.env.VITE_projectId,
-storageBucket:import.meta.env.VITE_storageBucket,
-messagingSenderId:import.meta.env.VITE_messagingSenderId,
-appId:import.meta.env.VITE_appId
+  apiKey: "AIzaSyBaJLtw4ywfWa-QiPwEzzpTf4oU6xdx1XY",
+  authDomain: "learning-and-teaching-1eee3.firebaseapp.com",
+  projectId: "learning-and-teaching-1eee3",
+  storageBucket: "learning-and-teaching-1eee3.appspot.com",
+  messagingSenderId: "798764689486",
+  appId: "1:798764689486:web:74c463e5d6f96ab285bb1f"
 };
 
 // Initialize Firebase
-export  const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
